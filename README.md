@@ -227,7 +227,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ for learning and demonstrating professional MLOps practices**
+**Built with ❤️ for learning and demonstrating MLOps practices**
 
 ```
 python train.py
