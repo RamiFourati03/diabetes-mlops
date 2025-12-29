@@ -1,4 +1,4 @@
-# 🩺 Diabetes Prediction - Professional MLOps Project
+# 🩺 Diabetes Prediction -  MLOps Project
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
