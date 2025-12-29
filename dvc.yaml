@@ -1,0 +1,22 @@
+# dvc.yaml - DVC Pipeline Configuration
+stages:
+  data_ingestion:
+    cmd: python -c "from src.data.data_ingestion import ingest_data, validate_data; df = ingest_data(); validate_data(df)"
+    deps:
+      - src/data/data_ingestion.py
+      - params.yaml
+    outs:
+      - data/diabetes.csv
+
+  data_preprocessing:
+    cmd: python -c "from src.pipeline.training_pipeline import run_training_pipeline; run_training_pipeline()"
+    deps:
+      - src/pipeline/training_pipeline.py
+      - src/data/data_ingestion.py
+      - src/model/model_trainer.py
+      - params.yaml
+      - data/diabetes.csv
+    outs:
+      - models/diabetes_model.pkl
+    metrics:
+      - metrics.json

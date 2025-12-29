@@ -1,0 +1,23 @@
+data:
+  url: "https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv"
+  test_size: 0.2
+  random_state: 42
+
+model:
+  name: "RandomForest"
+  params:
+    n_estimators: 100
+    random_state: 42
+    max_depth: 10
+
+mlflow:
+  experiment_name: "Diabetes_Prediction_Experiment"
+  tracking_uri: "http://localhost:5000"
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+
+app:
+  title: "Diabetes Prediction MLOps App"
+  description: "Professional MLOps application for diabetes prediction using Streamlit"
