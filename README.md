@@ -5,7 +5,7 @@
 [![MLflow](https://img.shields.io/badge/MLflow-2.8+-green.svg)](https://mlflow.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
-A professional MLOps implementation for diabetes prediction using machine learning, featuring automated pipelines, model tracking, and a modern Streamlit web interface.
+An MLOps implementation for diabetes prediction using machine learning, featuring automated pipelines, model tracking, and a modern Streamlit web interface.
 
 ## 🎯 Project Overview
 
