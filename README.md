@@ -273,7 +273,6 @@ kubectl apply -f diabetes-prediction-model-deployment.yaml
 
 🙌 Credits
 
-Created by `ABHISHEK VEERAMALLA`
+Created by `Rami Fourati`
 
-Subscribe for more DevOps + MLOps content on the YouTube Channel - `Abhishek.Veeramalla`
 
