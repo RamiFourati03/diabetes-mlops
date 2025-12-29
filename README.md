@@ -42,7 +42,46 @@ diabetes-prediction-mlops/
 ├── Dockerfile                    # Docker configuration
 ├── docker-compose.yml           # Multi-container setup
 └── README.md
-```
+``
+flowchart LR
+    A[Raw Data\nURL Kaggle] --> B[Data Ingestion\n(src/data)]
+    B --> C[DVC Versioning\n(data + features)]
+    C --> D[Feature Engineering\n& Validation]
+
+    E[params.yaml\nConfig centrale] --> D
+    E --> F
+
+    D --> F[Training Pipeline\n(src/pipeline & src/model)]
+    F --> G[RandomForestClassifier\nTraining & Evaluation]
+    G --> H[MLflow Tracking\nLog params, metrics, model]
+    H --> I[MLflow Model Registry]
+    G --> J[Model Artifact\nmodels/diabetes_model.pkl]
+
+    subgraph "Experimentation & Tracking"
+    H
+    I
+    end
+
+    J --> K[Streamlit App\nPrédiction live\n(streamlit_app/app.py)]
+
+    subgraph "Serving"
+    K
+    end
+
+    K --> L[Dockerfile\n+ docker-compose.yml]
+    L --> M[Containers running:\n- Streamlit :8501\n- MLflow UI :5000]
+
+    subgraph "Deployment"
+    L
+    M
+    end
+
+    N[GitHub Actions\nCI/CD] -.-> F
+    N -.-> L
+
+    style A fill:#e3f2fd,stroke:#2196f3
+    style J fill:#e8f5e9,stroke:#4caf50
+    style M fill:#fff3e0,stroke:#ff9800
 
 ## 🚀 Quick Start
 
